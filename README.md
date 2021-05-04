@@ -44,6 +44,13 @@ L.9 Setting up Babel
 
         install env preset:
             yarn add babel-preset-env@1.5.2
+            
+        our first babel command(to compile the code):
+            babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+        we leave this running in the background
+
+
+        
 
 
 
