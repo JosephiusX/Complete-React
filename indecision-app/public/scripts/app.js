@@ -3,12 +3,57 @@
 console.log('App.js is running');
 
 // JSX - Javascript XML
+// when working with jsx we can only have one root element
 var template = React.createElement(
-  'h1',
-  null,
-  'Indecision App'
-); // bable changes this into the line below so it can work in other browsers, the file is compiled into app.js in the public file
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Indecision App'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'This is some info'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'item one'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'item two'
+        )
+    )
+);
 
-var appRoot = document.getElementById('app'); // where we want to put that template 
+// Challange
+var template2 = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Joseph Granville'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Age: 29'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'Location: San Francisco'
+    )
+);
 
-ReactDOM.render(template, appRoot); // using reactDOM to say we wanna use
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(template2, appRoot);

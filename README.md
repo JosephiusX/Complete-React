@@ -49,6 +49,12 @@ L.9 Setting up Babel
             babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
         we leave this running in the background
 
+L.10 Exploring JSX
+
+         some extensions that are helpful with JSX:
+            Babel ES6/ES7
+            Path Intellisense
+
 
         
 
