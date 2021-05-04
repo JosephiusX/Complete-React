@@ -4,18 +4,22 @@ console.log('App.js is running');
 
 // JSX - Javascript XML
 // when working with jsx we can only have one root element
+var app = {
+    title: 'Indecision App',
+    subtitle: 'this is some info'
+};
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Indecision App'
+        app.title
     ),
     React.createElement(
         'p',
         null,
-        'This is some info'
+        app.subtitle
     ),
     React.createElement(
         'ol',
@@ -33,27 +37,38 @@ var template = React.createElement(
     )
 );
 
-// Challange
-var template2 = React.createElement(
+var user = {
+    name: 'JosephiusX',
+    age: 30,
+    location: 'SF'
+
+    // // we can use {} to place Javascript expressions inside our template2 to make the JSX dynamic
+    // var userName = 'Joseph';
+    // var userAge = 27;
+    // var userLocation = 'San Francisco'
+
+};var template2 = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Joseph Granville'
+        user.name
     ),
     React.createElement(
         'p',
         null,
-        'Age: 29'
+        'Age:',
+        user.age
     ),
     React.createElement(
         'p',
         null,
-        'Location: San Francisco'
+        'Location: ',
+        user.location
     )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(template, appRoot);
