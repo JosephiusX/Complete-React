@@ -2,11 +2,20 @@
 
 console.log('App.js is running');
 
-// JSX - Javascript XML
-// when working with jsx we can only have one root element
+// // if statements
+// if ( 1 === 1) {
+//     'equal'
+// } else {
+//     'not equal'
+// }
+
+// // ternary operators
+// 1 === 1 ? 'equal' : 'not equal'  // if 1 = 1 then 'equal' else 'not equal'
+
 var app = {
     title: 'Indecision App',
-    subtitle: 'this is some info'
+    subtitle: 'this is some info',
+    options: ['One', 'Two']
 };
 var template = React.createElement(
     'div',
@@ -19,7 +28,12 @@ var template = React.createElement(
     React.createElement(
         'p',
         null,
-        app.subtitle
+        app.subtitle && app.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        app.options.length > 0 ? 'here are your options' : ''
     ),
     React.createElement(
         'ol',
@@ -37,36 +51,50 @@ var template = React.createElement(
     )
 );
 
+// // we can use {} to place Javascript expressions inside our template2 to make the JSX dynamic
+// var userName = 'Joseph';
+// var userAge = 27;
+// var userLocation = 'San Francisco'
+
+// logical and operator
+true && 'some age'; // if this is true && render this
+false && 'some age'; // if false && render nothing
+
+
 var user = {
-    name: 'JosephiusX',
-    age: 30,
-    location: 'SF'
+    name: 'Joseph',
+    age: 26,
+    location: 'San Fraancisco'
+};
+var getLocation = function getLocation(location) {
+    if (location) {
+        // if location exist
+        return React.createElement(
+            'p',
+            null,
+            'Location: ',
+            location
+        );
+    }
+};
 
-    // // we can use {} to place Javascript expressions inside our template2 to make the JSX dynamic
-    // var userName = 'Joseph';
-    // var userAge = 27;
-    // var userLocation = 'San Francisco'
-
-};var template2 = React.createElement(
+// if something is undefined in jsx it just dosent show up like the getLocation function below this can be useful
+// undefined, boolean, null are ignored by jsx
+var template2 = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        user.name
+        user.name ? user.name : "Anonymous"
     ),
-    React.createElement(
+    user.age && user.age >= 18 && React.createElement(
         'p',
         null,
-        'Age:',
+        'Age: ',
         user.age
     ),
-    React.createElement(
-        'p',
-        null,
-        'Location: ',
-        user.location
-    )
+    getLocation(user.location)
 );
 
 var appRoot = document.getElementById('app');
