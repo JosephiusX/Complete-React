@@ -62,6 +62,23 @@ L.13 ES6 const and let
         stop babel and restart it to compile the file we just created:
         babel src/playground/es6-let-const.js --out-file=public/scripts/app.js --presets=env,react --watch
 
+L.15 Arrow functions pt 2
+
+        we make arrow-functions-2.js file and connect it up wit babel:
+        babel src/playground/es6-arrow-function-2.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+        then run live server from inside the public dir
+
+L.16 Events and attributes
+
+        switch babel back to app.js:
+        babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+
+        
+
+
+
 
         
 
