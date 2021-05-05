@@ -41,52 +41,47 @@ var template = React.createElement(
     )
 );
 
-// // we can use {} to place Javascript expressions inside our template2 to make the JSX dynamic
-// var userName = 'Joseph';
-// var userAge = 27;
-// var userLocation = 'San Francisco'
+// some attributes in jsx are the same as html like id,
+// some jsx attributes have been changed like className instead of the html class
+// I can set jsx properties = to js expressions using {}
 
-// logical and operator
-true && 'some age'; // if this is true && render this
-false && 'some age'; // if false && render nothing
-
-
-var user = {
-    name: 'Joseph',
-    age: 26,
-    location: 'San Fraancisco'
+var count = 0;
+var addOne = function addOne() {
+    return console.log('addOne');
 };
-var getLocation = function getLocation(location) {
-    if (location) {
-        // if location exist
-        return React.createElement(
-            'p',
-            null,
-            'Location: ',
-            location
-        );
-    }
+var minusOne = function minusOne() {
+    return console.log('-1');
+};
+var reset = function reset() {
+    return console.log('reset');
 };
 
-// if something is undefined in jsx it just dosent show up like the getLocation function below this can be useful
-// undefined, boolean, null are ignored by jsx
-var template2 = React.createElement(
+var templateTwo = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        user.name ? user.name : "Anonymous"
+        'Count: ',
+        count
     ),
-    user.age && user.age >= 18 && React.createElement(
-        'p',
-        null,
-        'Age: ',
-        user.age
+    React.createElement(
+        'button',
+        { onClick: addOne },
+        '+1'
     ),
-    getLocation(user.location)
+    React.createElement(
+        'button',
+        { onClick: minusOne },
+        '-1'
+    ),
+    React.createElement(
+        'button',
+        { onClick: reset },
+        'reset'
+    )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);

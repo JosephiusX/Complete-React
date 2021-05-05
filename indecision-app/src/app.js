@@ -21,40 +21,26 @@ const template = (
     </div>
 );
 
+// some attributes in jsx are the same as html like id,
+// some jsx attributes have been changed like className instead of the html class
+// I can set jsx properties = to js expressions using {}
+
+let count = 0;
+const addOne = (() => console.log('addOne'))
+const minusOne = (() => console.log('-1'))
+const reset = (() => console.log('reset'))
 
 
-// // we can use {} to place Javascript expressions inside our template2 to make the JSX dynamic
-// var userName = 'Joseph';
-// var userAge = 27;
-// var userLocation = 'San Francisco'
-
-// logical and operator
-true && 'some age' // if this is true && render this
-false && 'some age' // if false && render nothing
-
-
-const user = {
-    name:'Joseph',
-    age:26,
-    location: 'San Fraancisco'
-};
-const getLocation = (location) => {
-    if (location) { // if location exist
-        return <p>Location: {location}</p>
-    }
-}
-
-// if something is undefined in jsx it just dosent show up like the getLocation function below this can be useful
-// undefined, boolean, null are ignored by jsx
-const template2 = (
+const templateTwo = (
     <div>
-        <h1>{user.name ? user.name : "Anonymous"}</h1>
-        {user.age && user.age >= 18 && <p>Age: {user.age}</p>}
-        {getLocation(user.location)}
+        <h1>Count: {count}</h1>
+        <button onClick={addOne}>+1</button>
+        <button onClick={minusOne}>-1</button>
+        <button onClick={reset}>reset</button>
     </div>
-)
+);
 
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
 
