@@ -2,16 +2,6 @@
 
 console.log('App.js is running');
 
-// // if statements
-// if ( 1 === 1) {
-//     'equal'
-// } else {
-//     'not equal'
-// }
-
-// // ternary operators
-// 1 === 1 ? 'equal' : 'not equal'  // if 1 = 1 then 'equal' else 'not equal'
-
 var app = {
     title: 'Indecision App',
     subtitle: 'this is some info',

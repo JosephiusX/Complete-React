@@ -55,6 +55,13 @@ L.10 Exploring JSX
             Babel ES6/ES7
             Path Intellisense
 
+L.13 ES6 const and let
+
+        in the source dir create playground folder
+        in playground folder create es6-let-const.js
+        stop babel and restart it to compile the file we just created:
+        babel src/playground/es6-let-const.js --out-file=public/scripts/app.js --presets=env,react --watch
+
 
         
 
