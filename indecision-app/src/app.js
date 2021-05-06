@@ -26,21 +26,35 @@ const template = (
 // I can set jsx properties = to js expressions using {}
 
 let count = 0;
-const addOne = (() => console.log('addOne'))
-const minusOne = (() => console.log('-1'))
-const reset = (() => console.log('reset'))
+const addOne = () => {
+     count++ // count = count + 1;
+     renderCounterApp();
+    
+    }
 
+const minusOne = () => {
+    count--;
+    renderCounterApp();
+}
 
-const templateTwo = (
-    <div>
-        <h1>Count: {count}</h1>
-        <button onClick={addOne}>+1</button>
-        <button onClick={minusOne}>-1</button>
-        <button onClick={reset}>reset</button>
-    </div>
-);
+const reset = () => {
+    count = 0;
+    renderCounterApp();
+}
 
 const appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+const renderCounterApp = () => { // this function helps us to re render when there is a change
+    const templateTwo = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={addOne}>+1</button>
+            <button onClick={minusOne}>-1</button>
+            <button onClick={reset}>reset</button>
+        </div>
+    );
 
+    ReactDOM.render(templateTwo, appRoot); // react dom render only re renders specifically what is changed. It dosent bother to render parts that havent changed
+};
+
+renderCounterApp();
