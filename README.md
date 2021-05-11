@@ -90,6 +90,14 @@ L.25 Es6 Classes II
 
     we can override method in parent class by defining the same method name
 
+L.26 Creating React Component
+
+    configure babel:
+    babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+    React components wont work without a uppercase first letter
+    this is how it diferenciates betwen html and react elements
+
 
         
 
