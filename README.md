@@ -83,6 +83,13 @@ L24. ES6 Classes
 
     babel src/playground/es6-classes-1.js --out-file=public/scripts/app.js --presets=env,react --watch
 
+    recap: classes are genaric templates. 
+    when we call the class with new we can set the individual details for that instance
+
+L.25 Es6 Classes II
+
+    we can override method in parent class by defining the same method name
+
 
         
 
