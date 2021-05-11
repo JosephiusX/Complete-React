@@ -98,6 +98,9 @@ L.26 Creating React Component
     React components wont work without a uppercase first letter
     this is how it diferenciates betwen html and react elements
 
+L.27 Nesting Components
+
+    Our components can render jsx meaning they can also render other components
 
         
 
