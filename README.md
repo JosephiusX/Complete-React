@@ -74,6 +74,15 @@ L.16 Events and attributes
         switch babel back to app.js:
         babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 
+L.21 Build It: Visibility toggle
+
+    set up babel from the indecision dir:
+    babel src/playground/build-it-visible.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+L24. ES6 Classes
+
+    babel src/playground/es6-classes-1.js --out-file=public/scripts/app.js --presets=env,react --watch
+
 
         
 
