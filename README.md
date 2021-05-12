@@ -102,6 +102,13 @@ L.27 Nesting Components
 
     Our components can render jsx meaning they can also render other components
 
+L.28 Component Props
+
+    I can pass in properties to my components similar to how it would be done in html
+    their actually just key value pares
+    when we pass data into a component we can use that data inside of the component
+
+
         
 
 
