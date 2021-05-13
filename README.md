@@ -108,6 +108,12 @@ L.28 Component Props
     their actually just key value pares
     when we pass data into a component we can use that data inside of the component
 
+L.32 Adding State to counter app pt 1
+
+    set up babel:
+        babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+
 
         
 

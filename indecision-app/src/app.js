@@ -42,7 +42,7 @@ class Action extends React.Component {
 
 
 class Options extends React.Component {
-    constructor(props) {
+    constructor(props) { // this construstor helps me bind this keyword to functions below
         super(props);
         this.handleRemoveAll = this.handleRemoveAll.bind(this);
     }
