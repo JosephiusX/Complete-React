@@ -138,7 +138,11 @@ L.38 Section summary Props vs. State
 
     State: defined form component inself
         
+L. 40 The statless functional component 
 
+    class based components are good for when we need to used state
+
+    functional components are quicker and better for the components where we dont need state
 
 
 
