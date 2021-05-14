@@ -115,8 +115,15 @@ L.32 Adding State to counter app pt 1
 
 L.35 Build it: Adding State to VisibilityToggle
 
-    set up babel: babel src/playground/build-it-visible.js --out-file=public/scripts/app.js --presets=env,react --watch
+    set up babel:  
+    babel src/playground/build-it-visible.js --out-file=public/scripts/app.js --presets=env,react --watch
 
+L.36 Indecision State: pt 1
+
+    set up babel: 
+    babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+    In this lesson we tought a child to communicate with its parent
         
 
 
