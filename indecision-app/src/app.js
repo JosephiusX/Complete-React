@@ -1,3 +1,6 @@
+
+
+// Class component
 class IndecisionApp extends React.Component{
     constructor(props) {
         super(props)
@@ -57,55 +60,66 @@ class IndecisionApp extends React.Component{
     }
 }
 
-class Header extends React.Component {
-    render() {
-       return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h2>{this.props.subtitle}</h2>
-            </div>
-        );
-    }
-}
-
-class Action extends React.Component {
-    render() {
-        return (
-            <div>
-                <button
-                    onClick={this.props.handlePick}
-                    disabled={!this.props.hasOptions}
-                    >
-                    What should I do?
-                    </button>
-            </div>
-        );
-    }
-}
-
-
-class Options extends React.Component {
-    render() {
-       return (
-       <div>
-            <button onClick={this.props.handleDeleteOptions}>Remove All</button>
-              {
-                  this.props.options.map((option) => <Option key={option} optionText={option} />)
-              }
+// functional component
+const Header = (props) => {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h2>{props.subtitle}</h2>
         </div>
-        );
-    }
+    );
 }
 
-class Option extends React.Component {
-    render() {
-        return (
-            <div>
-                {this.props.optionText}
-            </div>
-        );
-    }
+// functional component
+const Action = (props) => {
+    return (
+        <div>
+            <button
+                onClick={props.handlePick}
+                disabled={!props.hasOptions}
+                >
+                What should I do?
+                </button>
+        </div>
+    );
+};
+
+// class component - same as functional component above
+// class Action extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <button
+//                     onClick={this.props.handlePick}
+//                     disabled={!this.props.hasOptions}
+//                     >
+//                     What should I do?
+//                     </button>
+//             </div>
+//         );
+//     }
+// }
+
+// functional component
+const Options = (props) => {
+    return (
+    <div>
+         <button onClick={props.handleDeleteOptions}>Remove All</button>
+           {
+               props.options.map((option) => <Option key={option} optionText={option} />)
+           }
+     </div>
+     );
 }
+
+const Option = (props) => {
+    return (
+        <div>
+            {props.optionText}
+        </div>
+    );
+}
+
 
 
 class AddOption extends React.Component {
@@ -141,7 +155,15 @@ class AddOption extends React.Component {
     }
 }
 
-// Option -> Option component here
 
+// functional component
+// const User = (props) => { // we cant use state in functional components but we can use props
+//     return (
+//         <div>
+//             <p>Name: {props.name}</p>
+//             <p>Age: {props.age}</p>
+//         </div>
+//     )
+// };
 
 ReactDOM.render(<IndecisionApp />, document.getElementById('app'));

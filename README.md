@@ -124,6 +124,19 @@ L.36 Indecision State: pt 1
     babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 
     In this lesson we tought a child to communicate with its parent
+
+L.38 Section summary Props vs. State
+
+    Props Vs States: 
+        They both: 
+            are objects
+            can be used when rendering
+            Changes cause re-renders
+    
+        diffrences
+    Props : defined from above
+
+    State: defined form component inself
         
 
 
