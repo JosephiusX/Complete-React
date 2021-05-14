@@ -1,6 +1,4 @@
 
-
-// Class component
 class IndecisionApp extends React.Component{
     constructor(props) {
         super(props)
@@ -8,7 +6,7 @@ class IndecisionApp extends React.Component{
         this.handlePick = this.handlePick.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
         this.state = {
-            options: []
+            options: props.options
         };
     }
     handleDeleteOptions() {
@@ -38,12 +36,11 @@ class IndecisionApp extends React.Component{
 
     }
     render() {
-        const title = 'Indecision';
         const subtitle = 'Put your life in the hands of a computer';
 
         return (
             <div>
-                <Header title={title} subtitle={subtitle}/>
+                <Header subtitle={subtitle}/>
                 <Action
                  hasOptions={this.state.options.length > 0}
                  handlePick={this.handlePick}
@@ -60,17 +57,23 @@ class IndecisionApp extends React.Component{
     }
 }
 
-// functional component
+IndecisionApp.defaultProps = {
+    options: []
+};
+
 const Header = (props) => {
     return (
         <div>
             <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            {props.subtitle && <h2>{props.subtitle}</h2>}
         </div>
     );
-}
+};
 
-// functional component
+Header.defaultProps = {
+    title: 'some default!'
+};
+
 const Action = (props) => {
     return (
         <div>
@@ -84,23 +87,6 @@ const Action = (props) => {
     );
 };
 
-// class component - same as functional component above
-// class Action extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <button
-//                     onClick={this.props.handlePick}
-//                     disabled={!this.props.hasOptions}
-//                     >
-//                     What should I do?
-//                     </button>
-//             </div>
-//         );
-//     }
-// }
-
-// functional component
 const Options = (props) => {
     return (
     <div>
@@ -119,8 +105,6 @@ const Option = (props) => {
         </div>
     );
 }
-
-
 
 class AddOption extends React.Component {
     constructor(props) {
@@ -155,15 +139,4 @@ class AddOption extends React.Component {
     }
 }
 
-
-// functional component
-// const User = (props) => { // we cant use state in functional components but we can use props
-//     return (
-//         <div>
-//             <p>Name: {props.name}</p>
-//             <p>Age: {props.age}</p>
-//         </div>
-//     )
-// };
-
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp options= {['Option one', 'Option two']}/>, document.getElementById('app'));

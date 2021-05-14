@@ -8,7 +8,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// Class component
 var IndecisionApp = function (_React$Component) {
     _inherits(IndecisionApp, _React$Component);
 
@@ -21,7 +20,7 @@ var IndecisionApp = function (_React$Component) {
         _this.handlePick = _this.handlePick.bind(_this);
         _this.handleAddOption = _this.handleAddOption.bind(_this);
         _this.state = {
-            options: []
+            options: props.options
         };
         return _this;
     }
@@ -59,13 +58,12 @@ var IndecisionApp = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var title = 'Indecision';
             var subtitle = 'Put your life in the hands of a computer';
 
             return React.createElement(
                 'div',
                 null,
-                React.createElement(Header, { title: title, subtitle: subtitle }),
+                React.createElement(Header, { subtitle: subtitle }),
                 React.createElement(Action, {
                     hasOptions: this.state.options.length > 0,
                     handlePick: this.handlePick
@@ -84,8 +82,9 @@ var IndecisionApp = function (_React$Component) {
     return IndecisionApp;
 }(React.Component);
 
-// functional component
-
+IndecisionApp.defaultProps = {
+    options: []
+};
 
 var Header = function Header(props) {
     return React.createElement(
@@ -96,7 +95,7 @@ var Header = function Header(props) {
             null,
             props.title
         ),
-        React.createElement(
+        props.subtitle && React.createElement(
             'h2',
             null,
             props.subtitle
@@ -104,7 +103,10 @@ var Header = function Header(props) {
     );
 };
 
-// functional component
+Header.defaultProps = {
+    title: 'some default!'
+};
+
 var Action = function Action(props) {
     return React.createElement(
         'div',
@@ -120,23 +122,6 @@ var Action = function Action(props) {
     );
 };
 
-// class component - same as functional component above
-// class Action extends React.Component {
-//     render() {
-//         return (
-//             <div>
-//                 <button
-//                     onClick={this.props.handlePick}
-//                     disabled={!this.props.hasOptions}
-//                     >
-//                     What should I do?
-//                     </button>
-//             </div>
-//         );
-//     }
-// }
-
-// functional component
 var Options = function Options(props) {
     return React.createElement(
         'div',
@@ -217,14 +202,4 @@ var AddOption = function (_React$Component2) {
     return AddOption;
 }(React.Component);
 
-// functional component
-// const User = (props) => { // we cant use state in functional components but we can use props
-//     return (
-//         <div>
-//             <p>Name: {props.name}</p>
-//             <p>Age: {props.age}</p>
-//         </div>
-//     )
-// };
-
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(IndecisionApp, { options: ['Option one', 'Option two'] }), document.getElementById('app'));
