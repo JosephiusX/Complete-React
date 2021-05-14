@@ -113,7 +113,9 @@ L.32 Adding State to counter app pt 1
     set up babel:
         babel src/playground/counter-example.js --out-file=public/scripts/app.js --presets=env,react --watch
 
+L.35 Build it: Adding State to VisibilityToggle
 
+    set up babel: babel src/playground/build-it-visible.js --out-file=public/scripts/app.js --presets=env,react --watch
 
         
 
